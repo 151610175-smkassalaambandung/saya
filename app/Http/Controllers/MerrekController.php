@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Merek;
 
 class MerrekController extends Controller
 {
@@ -14,6 +15,8 @@ class MerrekController extends Controller
     public function index()
     {
         //
+        $merek = Merek::all();
+        return view('merek.index',compact('merek'));
     }
 
     /**
@@ -24,6 +27,7 @@ class MerrekController extends Controller
     public function create()
     {
         //
+        return view('merek.create');
     }
 
     /**
@@ -35,6 +39,11 @@ class MerrekController extends Controller
     public function store(Request $request)
     {
         //
+        $merek = new Merek;
+        $merek->namamerek = $request->namamerek;
+        $merek->save();
+
+        return redirect()->route('merek.index');
     }
 
     /**
@@ -57,6 +66,8 @@ class MerrekController extends Controller
     public function edit($id)
     {
         //
+        $merek = Merek::findOrFail($id);
+        return view('merek.edit',compact('merek'));
     }
 
     /**
@@ -69,6 +80,11 @@ class MerrekController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $merek = Merek::findOrFail($id);
+        $merek->namamerek = $request->namamerek;
+        $merek->save();
+
+        return redirect()->route('merek.index');
     }
 
     /**
@@ -80,5 +96,8 @@ class MerrekController extends Controller
     public function destroy($id)
     {
         //
+        $merek=Merek::findOrFail($id);
+        $merek->delete();
+        return redirect()->route('merek.index');
     }
 }

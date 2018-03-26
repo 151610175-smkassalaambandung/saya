@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tipe;
 
 class TippeController extends Controller
 {
@@ -14,6 +15,8 @@ class TippeController extends Controller
     public function index()
     {
         //
+        $tipe = Tipe::all();
+        return view('tipe.index',compact('tipe'));
     }
 
     /**
@@ -24,6 +27,7 @@ class TippeController extends Controller
     public function create()
     {
         //
+        return view('tipe.create');
     }
 
     /**
@@ -35,6 +39,11 @@ class TippeController extends Controller
     public function store(Request $request)
     {
         //
+        $tipe = new Tipe;
+        $tipe->namatipe = $request->namatipe;
+        $tipe->save();
+
+        return redirect()->route('tipe.index');
     }
 
     /**
@@ -57,6 +66,8 @@ class TippeController extends Controller
     public function edit($id)
     {
         //
+        $tipe = Tipe::findOrFail($id);
+        return view('tipe.edit',compact('tipe'));
     }
 
     /**
@@ -69,6 +80,11 @@ class TippeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $tipe = Tipe::findOrFail($id);
+        $tipe->namatipe = $request->namatipe;
+        $tipe->save();
+
+        return redirect()->route('tipe.index');
     }
 
     /**
@@ -80,5 +96,8 @@ class TippeController extends Controller
     public function destroy($id)
     {
         //
+        $tipe=Tipe::findOrFail($id);
+        $tipe->delete();
+        return redirect()->route('tipe.index');
     }
 }

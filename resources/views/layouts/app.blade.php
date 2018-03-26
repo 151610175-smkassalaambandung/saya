@@ -49,6 +49,8 @@
               
                     <li><a href="{{ route('sepeda.index') }}">sepeda</a></li>
                         <li><a href="{{ route('Keterangan.index') }}">Keterangan</a></li>
+                        <li><a href="{{ route('merek.index') }}">Merek</a></li>
+                        <li><a href="{{ route('tipe.index') }}">Tipe</a></li>
 
                    
 

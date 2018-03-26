@@ -5,11 +5,11 @@
 		<div class="col-md-12">
 			<ul class="breadcrumb">
 				<li><a href="{{ url('/home') }}">Administrator SM</a></li>
-				<li class="active">merek sepeda	</li>
+				<li class="active">Sepeda</li>
 			</ul>
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h2 class="panel-title">Data merek sepeda</h2>
+					<h2 class="panel-title">Data Sepeda</h2>
 				</div>
 				<div class="panel-body">
 		

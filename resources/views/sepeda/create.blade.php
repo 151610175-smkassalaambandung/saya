@@ -5,14 +5,14 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="page-title-box">
-              <h4 class="page-title">Tambah Merek </h4>
+              <h4 class="page-title">Tambah Sepeda </h4>
               <ol class="breadcrumb p-0 m-0">
                   
                   <li>
-                      <a href="{{ route('sepeda.index') }}">Merek </a>
+                      <a href="{{ route('sepeda.index') }}">Sepeda </a>
                   </li>
                   <li class="active">
-                      Tambah Merek
+                      Tambah Sepeda
                   </li>
               </ol>
               <div class="clearfix"></div>

@@ -5,21 +5,21 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="page-title-box">
-              <h4 class="page-title">Tambah Merek </h4>
+              <h4 class="page-title">Tambah tipe </h4>
               <ol class="breadcrumb p-0 m-0">
                   
                   <li>
-                      <a href="{{ route('merek.index') }}">Merek </a>
+                      <a href="{{ route('tipe.index') }}">tipe </a>
                   </li>
                   <li class="active">
-                      Tambah Merek
+                      Tambah tipe
                   </li>
               </ol>
               <div class="clearfix"></div>
           </div>
     </div>
   </div>
-  <form method="post" action="{{route('merek.store') }}" id="form-guru" enctype="multipart/form-data" files="true">
+  <form method="post" action="{{route('tipe.store') }}" id="form-guru" enctype="multipart/form-data" files="true">
     {{ csrf_field() }}
     <div class="row">
       <div class="col-xs-9">
@@ -28,7 +28,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label">Nama</label>
-                <input type="text" name="namamerek" class="form-control" placeholder="" required="">
+                <input type="text" name="namatipe" class="form-control" placeholder="" required="">
                 <span class="help-block"></span>
               </div>
             </div>

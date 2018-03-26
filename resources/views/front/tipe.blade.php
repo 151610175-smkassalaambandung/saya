@@ -62,26 +62,17 @@
                 </div>
             </div>
                 <div class=" con-w3l agileinf">
-                            @php
-                        $keterangan = App\Keterangan::all();
+                        @php
+                        $tipe = App\Tipe::all();
                         @endphp
-                        @foreach($keterangan as $data)
+                        @foreach($tipe as $data)
                             <div class="col-md-3 pro-1">
                                 <div class="col-m">
-                                    <a href="#" data-toggle="modal" data-target="#myModal12" class="offer-img">
-                                        <img src="{{ asset('/img/'.$data->sepeda->foto.'') }}"  alt="" width="150" height="150" >
-                                    </a>
                                     <div class="mid-1">
                                         <div class="women">
-                                            <h6><a href="single.html">{{$data->sepeda->nama}}</a></h6>                         
+                                            <h6><a href="single.html">{{$data->namatipe}}</a></h6>                         
                                         </div>
                                         <div class="mid-2">
-                                            <center>
-                                            <p><h4><em class="item_price">Rp. {{$data->harga}},-</em></h4></p>
-                                              <div class="block">
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </center>
                                         </div>
                                             
                                     </div>

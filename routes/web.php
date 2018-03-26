@@ -19,6 +19,8 @@ Route::get('/merek', function () {
     return view('front/merek');
 });
 
+
+
 Route::get('/tipe', function () {
     return view('front/tipe');
 });
@@ -36,6 +38,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth','role:admin']], function(
 Route::resource('User', 'AkunController');
 Route::resource('sepeda', 'SepedaController');
 Route::resource('Keterangan', 'KettController');
+Route::resource('merek', 'MerrekController');
+Route::resource('tipe', 'TippeController');
 
 
 

@@ -37,7 +37,7 @@
                             @foreach($keterangan as $data)
                             <div class="col-md-3 m-wthree">
                                 <div class="col-m"><center>                             
-                                    <a href="#" data-toggle="modal" data-target="#$myModal1" class="offer-img">
+                                    <a href="" data-toggle="modal" data-target="#$myModal1" class="offer-img">
                                         <img src="{{ asset('/img/'.$data->sepeda->foto.'') }}"  alt="" width="150" height="150">
                                     </a>
                                     <div class="mid-1">

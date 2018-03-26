@@ -5,15 +5,15 @@
 		<div class="col-md-12">
 			<ul class="breadcrumb">
 				<li><a href="{{ url('/home') }}">Administrator SM</a></li>
-				<li class="active">merek sepeda	</li>
+				<li class="active">tipe sepeda	</li>
 			</ul>
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h2 class="panel-title">Data merek sepeda</h2>
+					<h2 class="panel-title">Data tipe sepeda</h2>
 				</div>
 				<div class="panel-body">
 		
-					<p><a class="btn btn-primary" href="{{ route('merek.create') }}">Tambah</a></p>
+					<p><a class="btn btn-primary" href="{{ route('tipe.create') }}">Tambah</a></p>
 					<table class="table">
 						<thead>
 							<tr>
@@ -22,13 +22,13 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach($merek as $data)
+							@foreach($tipe as $data)
 							<tr>
-								<td>{{$data->namamerek}}</td>
-								<td><a href="{{route('merek.edit', $data->id) }}" class="btn btn-primary">Ubah</a></td>
+								<td>{{$data->namatipe}}</td>
+								<td><a href="{{route('tipe.edit', $data->id) }}" class="btn btn-primary">Ubah</a></td>
 
 								<td>
-									<form class="delete" action="{{route('merek.destroy', $data->id)}}" method="POST">
+									<form class="delete" action="{{route('tipe.destroy', $data->id)}}" method="POST">
 										<input type="hidden" name="_method" value="DELETE">
 										<input type="hidden" name="token">
 										<button type="submit" class="btn btn-danger" onclick="return confirm('Anda Yakin Akan Menghapus Data ?');" value="Delete"><i class="fa fa-trash-o"> Hapus</i></button>

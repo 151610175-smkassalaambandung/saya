@@ -1,24 +1,60 @@
 @extends('layouts.app')
 @section('content')
+
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-				<ul class="breadcrumb">
-				<li><a href="{{ url('/home') }}">Administrator SM</a></li>
-				<li><a href="{{ url('/admin/User') }}">Merek mobil</a></li>
-				<li class="active">data merek</li>
-			</ul>
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h2 class="panel-title">Ubah data merek</h2>
-				</div>
-				<div class="panel-body">
-					{!! Form::model($merekku, ['url'=>route('Merek.update', $merekku->id), 'method'=>'put', 'class'=>'form-horizontal']) !!}
-					@include('merek._form')
-					{!! Form::close() !!}
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="page-title-box">
+              <h4 class="page-title">Edit </h4>
+              <ol class="breadcrumb p-0 m-0">
+                  
+                  <li>
+                      <a href="{{ route('merek.index') }}">Merek </a>
+                  </li>
+                  <li class="active">
+                     Edit Merek
+                  </li>
+              </ol>
+              <div class="clearfix"></div>
+          </div>
+    </div>
+  </div>
+  <form method="post" action="{{route('merek.update',$merek->id) }}" id="form-guru" enctype="multipart/form-data" files="true">
+    <input type="hidden" name="_method" value="PATCH">
+    {{ csrf_field() }}
+    <div class="row">
+      <div class="col-xs-9">
+        <div class="card-box">
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Nama</label>
+                <input type="text" name="namamerek" class="form-control" required="" value="{{$merek->namamerek}}">
+                <span class="help-block"></span>
+              </div>
+            </div>
+
+            
+          </div>
+          </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="card-box">
+          <div class="row">
+            <div class="col-md-12">
+              <hr>
+              <div class="pull-right">
+                <button class="btn btn-default btn-bordered waves-effect waves-light" type="reset">Reset</button>
+                <button class="btn btn-primary btn-bordered waves-effect waves-light" type="submit">Simpan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
+
 @endsection

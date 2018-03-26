@@ -9,10 +9,10 @@
               <ol class="breadcrumb p-0 m-0">
                   
                   <li>
-                      <a href="{{ route('sepeda.index') }}">Merek </a>
+                      <a href="{{ route('sepeda.index') }}">Sepeda </a>
                   </li>
                   <li class="active">
-                     Edit Merk
+                     Edit Sepeda
                   </li>
               </ol>
               <div class="clearfix"></div>
